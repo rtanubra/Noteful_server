@@ -7,8 +7,8 @@
     "test": "mocha --require test/setup.js",
     "start": "node src/server.js",
     "dev": "nodemon src/server.js",
-    "deploy":"git push heroku master",
-    "predeploy":"npm audit"
+    "deploy": "git push heroku master",
+    "predeploy": "npm audit"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,8 @@
     "dotenv": "^8.0.0",
     "express": "^4.17.0",
     "helmet": "^3.18.0",
-    "morgan": "^1.9.1"
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "chai": "^4.2.0",
