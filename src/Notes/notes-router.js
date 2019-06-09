@@ -1,5 +1,5 @@
 const notesService = require('./notes-service.js')
-const foldersService = require('../folders/folders-service.js')
+const foldersService = require('../Folders/folders-service')
 const express = require('express')
 const xss = require('xss')
 
