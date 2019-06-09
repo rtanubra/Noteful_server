@@ -4,7 +4,10 @@ const morgan = require('morgan')
 const cors = require('cors')
 const helmet = require('helmet')
 const { NODE_ENV } = require('./config')
+const xss = require('xss')
 
+const foldersRouter = require('./Folders/folders-router.js')
+const notesRouter = require('./Notes/notes-router.js')
 
 const app = express()
 
@@ -18,6 +21,7 @@ app.get('/',(req,res)=>{
     res.send("Hello, world!")
 })
 
+
 function errorHandler(error, req,res,next){
     let response
     if (NODE_ENV === 'production'){
@@ -28,6 +32,10 @@ function errorHandler(error, req,res,next){
     }
     res.status(500).json(response)
 }
+
+app.use('/api/folders', foldersRouter)
+app.use('/api/notes',notesRouter)
 app.use(errorHandler)
+
 
 module.exports = app
